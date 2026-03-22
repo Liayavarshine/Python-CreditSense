@@ -2,12 +2,15 @@ import joblib
 
 model = joblib.load("outputs/model.pkl")
 
-# Example input (same order as dataset)
 sample = [500000, 50000, 20000, 40, 100000, 0.5, 0.1, 0.2, 2]
 
-result = model.predict([sample])
+risk_score = model.predict([sample])[0]
 
-if result[0] == 0:
-    print("Safe (No Default)")
+print("Predicted Risk Score:", risk_score)
+
+if risk_score < 0.3:
+    print("Low Risk → Approve")
+elif risk_score < 0.7:
+    print("Medium Risk → Conditional Approval")
 else:
-    print("Risky (Default)")
+    print("High Risk → Reject")

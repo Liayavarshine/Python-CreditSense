@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
 import joblib
 
 def train_model():
@@ -9,9 +9,9 @@ def train_model():
     df = df.fillna(df.mean(numeric_only=True))
 
     X = df.drop("default", axis=1)
-    y = df["default"]
+    y = df["default"]   # decimal values
 
-    model = LogisticRegression()
+    model = LinearRegression()
     model.fit(X, y)
 
     joblib.dump(model, "outputs/model.pkl")
