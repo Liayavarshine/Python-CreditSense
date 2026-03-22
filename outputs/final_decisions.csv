@@ -1,0 +1,4 @@
+income,loan_amount,risk_score,Decision
+50000,20000,0.2,Loan Approved
+60000,25000,0.7,Loan Rejected
+70000,30000,0.4,Loan Review Required
