@@ -1,16 +1,8 @@
 def select_features(df):
+    df.columns = df.columns.str.strip()
     df = df.fillna(df.mean(numeric_only=True))
-    
-    df["Loan_Status"] = df["Loan_Status"].map({'Y': 1, 'N': 0})
 
-    features = df[[
-        "ApplicantIncome",
-        "CoapplicantIncome",
-        "LoanAmount",
-        "Loan_Amount_Term",
-        "Credit_History"
-    ]]
+    X = df.drop("default", axis=1)  # all input features
+    y = df["default"]              # target
 
-    target = df["Loan_Status"]
-
-    return features, target
+    return X, y
