@@ -1,0 +1,3 @@
+revenue,profit,balance,transactions,loan_amount,credit_utilization,profit_ratio,transaction_ratio,risk_score
+500000,50000,20000,40,100000,0.5,0.1,0.2,2
+300000,20000,15000,30,80000,0.6,0.08,0.15,3
