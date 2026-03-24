@@ -17,7 +17,6 @@ columns = [
     "risk_score"
 ]
 
-# 🔥 Take file input from user
 file_path = input("Enter CSV file path: ")
 
 try:
@@ -50,14 +49,14 @@ try:
 
     df["Decision"] = df["Predicted_Risk"].apply(decision)
 
-    print("\n📊 Results:")
+    print("\nResults:")
     print(df)
 
     # Save output file
     output_path = "outputs/predictions.csv"
     df.to_csv(output_path, index=False)
 
-    print(f"\n✅ Predictions saved to {output_path}")
+    print(f"\n Predictions saved to {output_path}")
 
 except Exception as e:
-    print("❌ Error:", e)
+    print("Error:", e)
